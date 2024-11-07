@@ -1,0 +1,60 @@
+{
+  "kind": "collectionType",
+  "collectionName": "blog_posts",
+  "info": {
+    "singularName": "blog-post",
+    "pluralName": "blog-posts",
+    "displayName": "BlogPost",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "Title": {
+      "type": "string",
+      "required": true,
+      "unique": true
+    },
+    "Slug": {
+      "type": "uid",
+      "targetField": "Title"
+    },
+    "Date": {
+      "type": "date"
+    },
+    "Views": {
+      "type": "biginteger"
+    },
+    "Featured": {
+      "type": "boolean",
+      "default": false,
+      "required": true
+    },
+    "Content": {
+      "displayName": "Content Section",
+      "type": "component",
+      "repeatable": true,
+      "component": "blog.content-section"
+    },
+    "Img": {
+      "type": "media",
+      "multiple": false,
+      "required": true,
+      "allowedTypes": [
+        "images"
+      ]
+    },
+    "Category": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::category.category"
+    },
+    "MetaData": {
+      "type": "component",
+      "repeatable": false,
+      "component": "seo.meta-data"
+    }
+  }
+}
