@@ -15,8 +15,8 @@
         "paragraph"
       ]
     },
-    "Text": {
-      "type": "text"
+    "Title": {
+      "type": "string"
     },
     "Image": {
       "type": "media",
@@ -26,8 +26,10 @@
         "images"
       ]
     },
-    "HeadingID": {
-      "type": "string"
+    "HID": {
+      "type": "string",
+      "required": false,
+      "unique": true
     }
   }
 }

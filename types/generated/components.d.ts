@@ -8,9 +8,9 @@ export interface BlogContentSection extends Struct.ComponentSchema {
     icon: 'collapse';
   };
   attributes: {
-    HeadingID: Schema.Attribute.String;
+    HID: Schema.Attribute.String & Schema.Attribute.Unique;
     Image: Schema.Attribute.Media<'images'>;
-    Text: Schema.Attribute.Text;
+    Title: Schema.Attribute.String;
     Type: Schema.Attribute.Enumeration<['Ex:', 'heading', 'paragraph']>;
   };
 }
